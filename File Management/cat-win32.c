@@ -19,7 +19,7 @@ int wmain(int argc, wchar_t **argv)
     if (hFile != INVALID_HANDLE_VALUE) {
         _putws(L"File opened successfully");
         DWORD dwFileSize = GetFileSize(hFile, NULL);
-        static BYTE *buf = NULL, mem[BUFSIZ];
+        BYTE *buf = NULL, mem[BUFSIZ];
         if (sizeof(mem) < dwFileSize) {
             buf = malloc(dwFileSize * sizeof(BYTE));
             if (buf == NULL) {

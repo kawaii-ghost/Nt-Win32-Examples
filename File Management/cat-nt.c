@@ -41,7 +41,7 @@ int wmain(int argc, wchar_t **argv)
                                FileStandardInformation);
 
         DWORD dwFileSize = FileStandard.EndOfFile.u.LowPart;
-        static BYTE *buf = NULL, mem[BUFSIZ];
+        BYTE *buf = NULL, mem[BUFSIZ];
         if (sizeof(mem) < dwFileSize) {
             buf = malloc(dwFileSize * sizeof(BYTE));
             if (buf == NULL) {

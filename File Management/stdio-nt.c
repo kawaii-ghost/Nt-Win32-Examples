@@ -16,6 +16,7 @@ int main(void)
                 sizeof(wString),
                 NULL,
                 NULL);
+
     HANDLE hStdOut = NtCurrentPeb()->ProcessParameters->StandardOutput;
     NtWriteFile(hStdOut,
                 NULL,
@@ -26,5 +27,6 @@ int main(void)
                 IoStatusBlock.Information,
                 NULL,
                 NULL);
+
     RtlExitUserProcess(STATUS_SUCCESS);
 }
